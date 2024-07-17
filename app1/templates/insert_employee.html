@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<h2 align="center">EMPLOYEE INSERTION</h2>
+<form  method="POST" action="{% url 'insert_employee' %}" align="center">
+{% csrf_token %}
+{{ form|crispy }}
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a>&nbsp;&nbsp;
+    <input type="submit" value="Submit"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+
+{% extends "master.html" %}
+{% block title %}
+COURSE MASTER
+{% endblock %}
+{% block content %}
+<h2>{{ course.id }}</h2>
+<p>Course: {{ course.course }}</p>
+<p>Course_id: {{ course.courseid }}</p>
+<a href="{% url 'edit_course' course.id %}">UPDATE</a>
+{% endblock %}

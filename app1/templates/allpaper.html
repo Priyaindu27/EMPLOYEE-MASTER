@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Paper Master</h1>
+        <table border="1">
+            <tr>
+                <th>PaperName</th>
+                <th>PaperCode</th>
+		<th>PaperType</th>
+		<th>PaperSheetName</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.papername }}</td>
+                <td>{{ x.papercode }}</td>
+		<td>{{ x.papertype }}</td>
+		<td>{{ x.papersheetname }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

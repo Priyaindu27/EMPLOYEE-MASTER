@@ -1,0 +1,46 @@
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h2 ALIGN="CENTER">COURSE MASTER SEARCH</h2>
+    <form method="get" ALIGN="CENTER">
+        {{ form.as_p }}
+        <button type="submit">SEARCH</button>
+   
+    
+    {% if results %}
+        <h2 >Results:</h2>
+        
+            <table border="2" ALIGN="CENTER" >
+            <tr>
+                <th>COURSEID</th>
+                <th>COURSE_NAME</th>
+            </tr>
+            {% for item in results %}
+            
+                
+                <tr>
+                    <td>{{ item.courseid }}</td>
+                    <td>{{ item.course }}</td>
+                </tr>
+            
+                {% endfor %}
+                </table>
+            
+        
+        {% endif %}
+            
+    <br>
+    <br>
+    <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+              
+           
+</body>
+{% endblock %}
+</html>

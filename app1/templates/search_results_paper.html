@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<body>
+    <h2 align="center">PAPER MASTER SEARCH</h2>
+<p align="center">
+    <form method="get" align="center">
+        {{ form.as_p }}
+        <button type="submit">SEARCH</button>
+    </form></p>
+    
+    {% if results %}
+        <h2 ALIGN="CENTER">Results:</h2>
+        <ul>
+            <table border="5" ALIGN="CENTER" >
+                <tr>
+                    <th>PAPERCODE</th>
+                    <th>PAPERNAME</th>
+                    <th>PAPERTYPE</th>
+                    <th>PAPERSHEETNAME</th>
+                </tr>
+            {% for item in results %}
+            
+                <tr>
+                    <td>{{ item.papercode }}</td>
+	            <TD>{{ item.papername }}</TD> 
+                <TD>{{ item.papertype }}</TD>  
+	            <TD>{{ item.papersheetname }}</TD>
+                </tr>
+              
+            {% endfor %}
+        </table> 
+      
+    {% endif %}
+     <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+ 
+</body>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% block title %}
+PAPER MASTER
+{% endblock %}
+{% block content %}
+    <body>
+          <U><H2 ALIGN="center">PAPER MASTER DELETE</h2></U>
+        <table border="5" align="center">
+            <tr>
+		<th>PaperName</th>
+                <th>PaperCode</th>
+		<th>PaperType</th>
+                <th>PaperSheetName</th>
+		<th>Delete</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+		<td>{{ x.papername }}</td>
+                <td>{{ x.papercode }}</td>
+		<td>{{ x.papertype }}</td>
+                <td>{{ x.papersheetname }}</td>
+		<td>
+		<a href="{% url 'p_delete' pk=x.id %}">
+		<button type="button"> delete</button>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+</body>
+{% endblock %}
+
+    

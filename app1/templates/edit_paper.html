@@ -1,0 +1,15 @@
+<!-- edit_book.html -->
+<!DOCTYPE html>
+<html>
+{% extends "master.html" %}
+{% block title %}
+PAPER MASTER
+{% endblock %}
+{% block content %}
+<h2 align="center">PAPER MASTER UPDATE</h2>
+<form method="post" align="center">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">SAVE</button>
+</form>
+{% endblock %}

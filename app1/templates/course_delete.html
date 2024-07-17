@@ -1,0 +1,13 @@
+{% load static%}
+{% extends "master.html" %}
+<div class="main">
+	<!-- Create a Form -->
+	<form method="POST">
+		<!-- Security token by Django -->
+		{% csrf_token %}
+		{{ form.as_p }}
+		Are you want to delete this item ?<br>
+		<input type="submit" value="Yes" /><br>
+		<a href="{% url 'display_course' %}">Cancel </a>
+	</form>
+</div>

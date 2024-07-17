@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+{% block title %}
+SEM MASTER
+{% endblock %}
+{% block content %}
+    <body>
+          <u><h2 align="center">SEMESTER MASTER DELETE</h2></u>
+        <table border="5" align="center">
+            <tr>
+                <th>SemId</th>
+                <th>Semester</th>
+		<th>Delete</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+               	 <td>{{ x.semid }}</td>
+                <td>{{ x.sem }}</td>
+		<td>
+		<a href="{% url 's_delete' pk=x.id %}">
+		<button type="button"> delete</button>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+</body>
+{% endblock %}
+
+    

@@ -1,0 +1,181 @@
+
+{% load static %}
+<html><head>
+<title>{% block title %}{% endblock %}</title>
+    <style>
+        h1{
+            color:brown;
+        }
+        h2{
+            color: black;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .navbar{
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a{
+            float:left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown{
+            float:left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn{
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn{
+            background-color:red;
+        }   
+        .dropdown-content{
+            display: none;
+            position:absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a{
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover{
+            background-color:skyblue;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+    </style>
+</head>
+      <body bgcolor="lightgray"> 
+        <img src="{% static 'img/collegelogo.png' %}"  align="left" height="120px" width="120px">
+        <h1 align="center">MOTHER THERESA INSTITUTIONS OF COMPUTER APPLICATIONS<img src="{% static 'img/mother.png' %}" align="right" height="120px" width="120px" >
+        </h1>  <p align="center"><font color="black" size="5">Melumoi,palamaner-517408</font></br></br></p>
+        <h1 style="color: blue;background-color: lightyellow;border:2px solid yellow; text-align: center;">
+           STUDENT MARKS MANAGEMENT SYSTEM
+        </h1>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">EMPLOYEE MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'insert_employee' %}">ADD</a>
+                    <a href="{% url 'update_view_employee1' %}">UPDATE</a>
+                    <a href="{% url 'delete_view_employee2' %}">DELETE</a>
+		            <a href="{% url 'view_employee' %}">VIEW</a>
+		            <a href="{% url 'search_employee' %}">SEARCH</a>
+                </div>
+            </div>
+               <div class="dropdown">
+                <button class="dropbtn">BATCH MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'displaybatchinput' %}">ADD</a>
+                    <a href="{% url 'batch_all_details' %}">UPDATE</a>
+                    <a href="{% url 'batch_delete' %}">DELETE</a>
+		    <a href="{% url 'display_batch' %}">VIEW</a>
+		    <a href="{% url 'search1' %}">SEARCH</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">COURSE MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'displaycourseinput' %}">ADD</a>
+                    <a href="{% url 'course_all_details' %}">UPDATE</a>
+                    <a href="{% url 'course_delete' %}">DELETE</a>
+		    <a href="{% url 'display_course' %}">VIEW</a>
+		    <a href="{% url 'search2' %}">SEARCH</a>
+
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">SEMESTER MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'displayseminput' %}">ADD</a>
+                    <a href="{% url 'sem_all_details' %}">UPDATE</a>
+                    <a href="{% url 'sem_delete' %}">DELETE</a>
+		    <a href="{% url 'display_sem' %}">VIEW</a>
+		    <a href="{% url 'search3' %}">SEARCH</a>
+
+                </div>
+            </div>
+	 <div class="dropdown">
+                <button class="dropbtn">PAPER MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'displaypaperinput' %}">ADD</a>
+                    <a href="{% url 'paper_all_details' %}">UPDATE</a>
+                    <a href="{% url 'paper_delete' %}">DELETE</a>
+		    <a href="{% url 'display_paper' %}">VIEW</a>
+		    <a href="{% url 'search5' %}">SEARCH</a>
+
+                </div>
+            </div>
+	  <div class="dropdown">
+                <button class="dropbtn">EXAM MASTER</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'displayexaminput' %}">ADD</a>
+                    <a href="{% url 'exam_all_details' %}">UPDATE</a>
+                    <a href="{% url 'exam_delete' %}">DELETE</a>
+		    <a href="{% url 'display_exam' %}">VIEW</a>
+		    <a href="{% url 'search4' %}">SEARCH</a>
+                </div>
+            </div>
+	 <div class="dropdown">
+                <button class="dropbtn">STUDENT MASTER</button>
+                <div class="dropdown-content">
+                    <a href="#">ADD</a>
+                    <a href="#">UPDATE</a>
+                    <a href="#">DELETE</a>
+		    <a href="#">VIEW</a>
+
+                </div>
+            </div>
+	 <div class="dropdown">
+                <button class="dropbtn">TRANSACTION MASTER</button>
+                <div class="dropdown-content">
+                    <a href="#">ADD</a>
+                    <a href="#">UPDATE</a>
+                    <a href="#">DELETE</a>
+		            <a href="#">VIEW</a>
+		            <a href="#">SEARCH</a>
+
+                </div>
+            </div>
+	<div class="dropdown">
+                <button class="dropbtn">REPORT</button>
+                <div class="dropdown-content">
+                    <a href="#">VIEW</a>
+                    <a href="#">PRINT</a>
+		</DIV>
+	</DIV>
+	
+	<div class="dropdown">
+                <button class="dropbtn">LOGOUT</button>
+                <div class="dropdown-content">
+		</DIV>
+	</DIV>
+</div>
+
+
+                    
+        <body>
+{% block content %}
+{% endblock %}
+    </body>
+</html>

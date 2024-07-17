@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+{% block title %}
+EXAM MASTER
+{% endblock %}
+{% block content %}
+    <body>
+        <U><h2 ALIGN="center">EXAM MASTER DELETE</h2></U>
+        <table border="5" align="center">
+            <tr>
+                  <th>ExamId</th>
+                   <th>ExamType</th>
+		      <th>Delete</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                    <td>{{ x.examid }}</td>
+                    <td>{{ x.examtype }}</td>
+		<td>
+		<a href="{% url 'e_delete' pk=x.id %}">
+		<button type="button"> delete</button></a>
+    </td>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+    </body>
+{% endblock %}
+

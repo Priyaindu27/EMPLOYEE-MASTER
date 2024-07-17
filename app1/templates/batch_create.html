@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "master.html" %}
+{% block title %}
+BATCH CREATE
+{% endblock %}
+{% block content %}
+  <body>
+    <h1>Create Batch</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save">
+    </form>
+{% endblock %}
+  </body>
+</html>

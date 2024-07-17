@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "master.html" %}
+{% block title %}
+BACTH
+{% endblock %}
+{% block content %}
+<html>
+<body>
+<h1>Batches</h1>
+<ul>
+{% for x in allbatch %}
+<li> {{ x.batchno }} {{ x.batchid }} </li>
+{% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

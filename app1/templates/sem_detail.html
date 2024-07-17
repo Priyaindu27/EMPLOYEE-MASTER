@@ -1,0 +1,11 @@
+
+{% extends "master.html" %}
+{% block title %}
+SEMESTER MASTER
+{% endblock %}
+{% block content %}
+<h2>{{ sem.id }}</h2>
+<p>Semester: {{ sem.sem }}</p>
+<p>Semester_id: {{ sem.semid }}</p>
+<a href="{% url 'edit_sem' sem.id %}">UPDATE</a>
+{% endblock %}

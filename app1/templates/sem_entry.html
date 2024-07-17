@@ -1,0 +1,45 @@
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<head>
+    <script typr="text/javascript">
+        function show_confirm()
+        {
+var r=confirm("Please! check given data");
+if (r==true)
+  {
+  alert("confirm!");
+  }
+else
+  {
+  alert(" Canceled!");
+  }
+}
+
+    </script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SEM ENTRY</title>
+    </head>
+    <body bgcolor="lavender">
+        <h2 align="center">SEMESTER MASTER INSERT</h2>
+        <h3 align="center">Please enter sem details</h3>
+        <form method="post" action="{% url 'process_sem_entry' %}" enctype="multipart/form-data" align="center">
+{% csrf_token %}
+{{ form.as_p }}
+ <p align="center"><label for="semid">SemID :</label>
+                <input type="text" name="semid" required></p>
+                <p align="center"><label for="sem">Semester:</label>
+                <input type="text" name="sem" required><p>
+               <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="show_confirm()" >SUBMIT</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'display_batch' %}"><BUTTON>CANCEL </button></A></P>
+</form>
+
+</body>
+</html>
+{% endblock %}

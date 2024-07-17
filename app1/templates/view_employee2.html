@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+{% block content %}
+<!-- <style>
+    table{ margin-top: 100px; margin-left: 550px;}
+ </style>-->
+ <!--<u><h2 align="center"><font color="blue">WELCOME TO EMPLOYEE DATA</font></h2></u>-->
+ <form action="{% url 'view_employee' %}">
+           <u><h2 align="center"> EMPLOYEE DELETION</h2></u><BR>
+        <table border="5" align="center">
+            <tr style="font-size: 20px;">
+              
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile</th>
+                <th>E-mail</th>
+                <th>DELETE</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+               
+                <td>{{ x.first_name }}</td>
+                <td>{{ x.last_name }}</td>
+                <td>{{ x.mobile }}</td>
+                <td>{{ x.email }}</td>
+                <td><a href="{% url 'delete_employee' pk=x.id %}"><button type="button">Delete</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a>&nbsp;&nbsp;
+    </form>
+
+    {% endblock %}
+   

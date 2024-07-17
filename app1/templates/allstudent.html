@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Student Master</h1>
+        <table border="1">
+            <tr>
+                <th>StudentName</th>
+                <th>StudentRegNo</th>
+		<th>Course</th>
+                <th>Sem</th>
+		<th>BatchId</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.studentname }}</td>
+                <td>{{ x.studentregno }}</td>
+		<td>{{ x.course }}</td>
+		<td>{{ x.sem }}</td>
+		<td>{{ x.batchno }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

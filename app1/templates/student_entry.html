@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>STUDENT ENTRY</title>
+    </head>
+    <body bgcolor="lavender">
+        <h1 align="center">STUDENT ENTRY FORM</h1>
+        <h3 align="center">Please enter student details</h3>
+        <form method="post" action="{% url 'process_student_entry' %}">
+            {% csrf_token %}
+                <p align="center"><label for="studentname">Student_Name:</label>
+                <input type="text" name="studentname" required><p>
+                <p align="center"><label for="studentregno">Student_Reg_No :</label>
+                <input type="text" name="studentregno" required></p>
+		<p align="center"><label for="course">Course_Name :</label>
+                <input type="text" name="course" required></p>
+		<p align="center"><label for="sem">Semester :</label>
+                <input type="text" name="sem" required></p>
+		<p align="center"><label for="batch_no">Batch_No :</label>
+                <input type="text" name="batch_no" required></p>
+		
+                <p align="center"><button align="center"><a href="{% url 'smms' %}">HOME </a></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">SUBMIT</button>&nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{% url 'display_student' %}">Cancel </a></button></p>
+            </table>
+        </form>
+    </body>
+</html>

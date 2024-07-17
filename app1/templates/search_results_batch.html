@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<body>
+    <h2 align="center">BATCH MASTER SEARCH</h2>
+<p align="center">
+    <form method="get" align="center">
+        {{ form.as_p }}
+        <button type="submit">SEARCH</button>
+    </form></p>
+    
+    {% if results %}
+        <h2 align="center">Results:</h2>
+        <ul>
+            <table border="2" align="center" >
+                <tr>
+                    <th>BATCHNO</th>
+                    <th>BATCHID</th>
+                </tr>
+            {% for item in results %}
+            
+                <tr>
+                    <td> {{ item.batchno }}</td>
+                    <td>{{ item.batchid }}</td>
+                </tr>
+                      
+               
+            {% endfor %}</table>
+        </ul>
+    {% endif %}
+    <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+ 
+</body>
+{% endblock %}

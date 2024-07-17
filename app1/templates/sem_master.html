@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+{% block title %}
+SEM MASTER
+{% endblock %}
+{% block content %}
+    <body>
+          <u><h2 align="center">SEMESTER MASTER VIEW</h2></u>
+        <table border="5" align="center">
+            <tr>
+		<th>SemId</th>
+                <th>Semester</th>
+                
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.semid }}</td>
+                <td>{{ x.sem }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+    </body>{% endblock %}
+</html>

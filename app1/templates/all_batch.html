@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><body>
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications 
+{% endblock %}
+{% block content %}
+<h5>Batches</h5>
+<table border="2">
+<tr>
+<td>BatchNo</td>
+<td>BatchId</td>
+</tr>
+{% for x in allstu %}
+
+<tr>
+   <td>{{ x.batchno }}</td>
+   <td>{{ x.batchid }}</td>
+</tr>
+{% endfor %}
+{% endblock %}
+</table>
+</body>
+</html>

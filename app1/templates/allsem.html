@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Sem Master</h1>
+        <table border="1">
+            <tr>
+                <th>Sem</th>
+                <th>SemId</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.sem }}</td>
+                <td>{{ x.semid }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

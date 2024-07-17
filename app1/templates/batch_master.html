@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+{% extends "master.html" %}
+{% block title %}
+BATCH MASTER
+{% endblock %}
+{% block content %}
+    <body>
+        <h2 align="center">BATCH MASTER VIEW</h2>
+        <table border="5" align="center">
+            <tr>
+                <th>BatchNO</th>
+                <th>BatchId</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.batchno }}</td>
+                <td>{{ x.batchid }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+{% endblock %}
+
+    </body>
+</html>

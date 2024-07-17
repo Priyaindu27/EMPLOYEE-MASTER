@@ -1,0 +1,48 @@
+{% extends "master.html" %}
+{% block title %}
+Master Of Computer Applications
+{% endblock %}
+{% block content %}
+<head>
+    <script typr="text/javascript">
+        function show_confirm()
+        {
+var r=confirm("Please! check given data");
+if (r==true)
+  {
+  alert("confirm!");
+  }
+else
+  {
+  alert(" Canceled!");
+  }
+}
+
+    </script>
+</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PAPER ENTRY</title>
+    </head>
+    <body bgcolor="lavender">
+        <h2 align="center">PAPER MASTER INSERT</h2>
+        <h3 align="center">Please enter paper details</h3>
+      <form method="post" action="{% url 'process_paper_entry' %}" enctype="multipart/form-data" align="center">
+{% csrf_token %}
+{{ form.as_p }}
+                <p align="center"><label for="papername">Paper_Name:</label>
+                <input type="text" name="papername" required><p>
+                <p align="center"><label for="papercode">Paper_Code:</label>
+                <input type="text" name="papercode" required></p>
+                <p align="center"><label for="papertype">Paper_Type:</label>
+                <input type="text" name="papertype" required></p>
+		<p align="center"><label for="papersheetname">Paper_Sheet_Name:</label>
+                <input type="text" name="papersheetname" required><p>
+                      <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="show_confirm()" >SUBMIT</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'display_batch' %}"><BUTTON>CANCEL</button></A></P>
+</form>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+{% block content %}
+<body>
+    <h2 align="center">EMPLOYEE SEARCH</h2>
+<p align="center">
+    <form method="get" align="center">
+        {{ form.as_p }}
+        <button type="submit">SEARCH</button>
+    </form></p>
+    
+    {% if results %}
+        <h2 align="center">Results:</h2>
+        <ul>
+            <table border="5" align="center">
+                <tr style="font-size: 20px;">
+                <tr>
+               
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile</th>
+                <th>E-mail</th>
+                </tr>
+            {% for x in results %}
+            
+                <tr>
+                  
+                    <td>{{ x.first_name }}</td>
+                    <td>{{ x.last_name }}</td>
+                    <td>{{ x.mobile }}</td>
+                    <td>{{ x.email }}</td>
+                </tr>
+               
+                {% endfor %}</table>
+            </ul>
+        {% endif %}
+    </body>
+    <p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a>&nbsp;&nbsp;
+    {% endblock %}
+    

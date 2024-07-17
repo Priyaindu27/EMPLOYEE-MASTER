@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Transaction</h1>
+        <table border="1">
+            <tr>
+                <th>COURSE</th>
+                <th>BATCH NO</th>
+		<th>SEMESTER</th>
+                <th>EXAM TYPE</th>
+		<th>STUDENT REG_NO</th>
+                <th>STUDENT NAME</th>
+		<th>PAPER CODE</th>
+                <th>PAPER NAME</th>
+		<th>MARKS</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.course_id }}</td>
+                <td>{{ x.batch_no }}</td>
+		 <td>{{ x.semester }}</td>
+                <td>{{ x.examt_ype }}</td>
+		 <td>{{ x.student_reg_no }}</td>
+                <td>{{ x.student_name }}</td>
+		 <td>{{ x.paper_code }}</td>
+                <td>{{ x.paper_name }}</td>
+		 <td>{{ x.marks }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<button align="center"><a href="{% url 'smms' %}">HOME </a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <title>Transaction Table</title>
+<meta charset="UTF-8">
+        <title>TRANSACTION ENTRY</title>
+    </head>
+    <body bgcolor="lightpink">
+        <h1 align="center">TRANSACTION ENTRY FORM</h1>
+        <h3 align="center">Please enter transaction details</h3>
+        <form method="post" action="{% url 'process_transaction_entry' %}">
+            {% csrf_token %}
+    </head>
+    <body>
+        <p align="center">
+        <label>COURSE:<input type="text" name="course" placeholder="course"></label><br><br>
+        <label>BATCH NO:<input type="text" name="batchno" placeholder="batchno"></label><br><br>
+        <label>SEMESTER:<input type="text" name="sem" placeholder="sem"></label><br><br>
+        <label>EXAM TYPE:<input type="text" name="examtype" placeholder="examtype"></label><br><br>
+        <label>STUDENT REG_NO:<input type="text" name="register" placeholder="register"></label><br><br>
+        <label>STUDENT NAME:<input type="text" name="NAME" placeholder="NAME"></label><br><br>
+        <label>PAPER CODE:<input type="text" name="code" placeholder="code"></label><br><br>
+        <label>PAPER NAME:<input type="text" name="paper" placeholder="paper"></label><br><br>
+        <label>MARKS :<input type="text" name="marks" placeholder="marks"></label><br><br>
+        <p align="center"><button type="submit">SUBMIT</button>&nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{% url 'display_transaction' %}">Cancel </a></button></p>
+</table>
+</form>
+    </body>
+</html>

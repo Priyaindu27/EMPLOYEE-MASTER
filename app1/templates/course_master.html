@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+{% extends "master.html" %}
+{% block title %}
+COURSE MASTER
+{% endblock %}
+{% block content %}
+    <body>
+        <u><h2 align="center">COURSE MASTER VIEWS</h2></u><br>
+        <table border="5" align="center">
+            <tr>	
+                <th>Course_ID</th>
+                <th>Course</th>
+                
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.courseid }}</td>
+                <td>{{ x.course }}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+<br>
+<br>
+<p align="center"><a href="{% url 'smms' %}"><button type="button">HOME </button></a></p>
+    </body>
+    {% endblock %}
+</html>
